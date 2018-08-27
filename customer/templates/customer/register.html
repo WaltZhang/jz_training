@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="acc-apl-content">
+    <form method="get" id="register_form" style="margin-bottom: 0px;padding-bottom: 74px">
+        {{ form.as_p }}
+    </form>
+</div>
+{% endblock %}
+
+{% block action_bar %}
+<button class="btn btn-primary fn-color-white fn-size-18" onclick="$('#register_form').submit()">{% trans '注册提交' %}</button>
+{% endblock %}

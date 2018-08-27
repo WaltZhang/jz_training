@@ -1,0 +1,792 @@
+/*  CR  start  */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mcursor {
+    cursor: pointer;
+}
+
+.my-clearfix {
+    clear: both;
+    overflow: hidden;
+}
+
+.border-circle {
+    border-radius: 5px;
+}
+
+input[type="button"]:disabled {
+    background-color: #e6e6e6;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #0058ff;
+    color: #fff;
+}
+
+.layui-input.readonly {
+    background-color: #e6e6e6;
+}
+
+/* 尺寸大小  */
+
+.global-width-max {
+    width: 100%;
+}
+
+.global-height-max {
+    height: 100%;
+}
+
+.golbal-width-size {
+    width: 1200px;
+}
+
+/*字体颜色*/
+
+.fn-color-light-blue {
+    color: #0239ff;
+}
+
+.fn-color-1 {
+    color: #6d6d6d;
+}
+
+.fn-color-2 {
+    color: #8f8f8f;
+}
+
+.fn-color-3 {
+    color: #808080;
+}
+
+.fn-color-4 {
+    color: #a4a4a4;
+}
+
+.fn-color-5 {
+    color: #262626;
+}
+
+.fn-color-red {
+    color: #FF0000;
+}
+
+.fn-color-white {
+    color: #ffffff;
+}
+
+/*背景色*/
+
+.bg-white {
+    background-color: #FFFFFF;
+}
+
+.bg-orange {
+    background-color: #fbb03b !important;
+}
+
+.bg-blue {
+    background-color: #0058ff !important;
+}
+
+.bg-gray {
+    background-color: #e6e6e6 !important;
+}
+
+.bg-low-blue {
+    background-color: #f1f5ff;
+}
+
+.bg-s-1 {
+    background-color: #f1f5f8 !important;
+}
+
+/*字体大小*/
+.fn-size-10 {
+    font-size: 10px;
+}
+
+.fn-size-12 {
+    font-size: 12px;
+}
+
+.fn-size-13 {
+    font-size: 13px;
+}
+
+.fn-size-14 {
+    font-size: 14px;
+}
+
+.fn-size-15 {
+    font-size: 15px;
+}
+
+.fn-size-16 {
+    font-size: 16px;
+}
+
+.fn-size-18 {
+    font-size: 18px;
+}
+
+.fn-size-21 {
+    font-size: 21px;
+}
+
+.fn-size-22 {
+    font-size: 22px;
+}
+
+/*TOP栏 begin */
+
+.jz-top {
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 2px solid #C7CDD4;
+}
+
+.jz-top .mp {
+    text-align: center;
+}
+
+.jz-top .sp {
+    padding: 0px 45px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.jz-top .active {
+    color: #0239ff;
+}
+
+.btn1:disabled {
+    color: #808080;
+    background-color: #e6e6e6 !important;
+}
+
+/*TOP栏 end */
+
+/* Bottom start */
+
+.jz-bottom {
+    height: 121px;
+    margin-top: 33.5px;
+    line-height: 121px;
+    text-align: center;
+}
+
+.jz-bottom .btn1 {
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #0058ff;
+    border: none;
+}
+
+/* Bottom end */
+.main-content {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 28px;
+}
+
+/*账户申请页面  begin */
+.my-title {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.my-title span {
+    font-size: 32px;
+}
+
+.acc-apl .active {
+    color: #0239ff;
+}
+
+.my-title .line {
+    padding: 0px 108px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    bottom: 18px;
+}
+
+.my-title .line.active {
+    border-bottom: 1px solid #0239ff;
+}
+
+.acc-apl-content {
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 54px;
+}
+
+.acc-apl-content .my-lable {
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+.acc-apl-content .bt-a {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 10px;
+    color: #0239ff;
+}
+
+.acc-apl-content .layui-form-item {
+    margin-bottom: 20px;
+}
+
+.acc-apl-content .layui-input-block {
+    margin-top: 14px;
+}
+
+/*账户申请页面  end */
+
+/* 账户身份识别页面 start */
+
+.acc-chk-content {
+    width: 760px;
+    margin: 0 auto;
+    margin-top: 53.5px;
+}
+
+.acc-chk-content .my-lable {
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+/* 账户身份识别页面 end */
+
+/* 账户身份资料上传 start */
+
+.acc-zl-content {
+
+}
+
+.acc-zl-content .head {
+    width: 1000px;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 34.4px;
+    height: 180px;
+}
+
+.acc-zl-content .head .line {
+    border-bottom: 2px dashed #90a0ba;
+    padding: 0px 60px;
+    position: relative;
+    top: -10px;
+}
+
+.acc-zl-content .head .dv {
+    float: left;
+}
+
+.acc-zl-content .head .pdv {
+    margin-left: 186px;
+    padding-top: 40px;
+}
+
+.acc-zl-content .head .pdv .line {
+    padding: 20px 96px;
+    border-bottom: dashed 2px #90a0ba;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.acc-zl-content .head .sdv {
+    margin-top: 17px;
+}
+
+.acc-zl-content .middle {
+    height: 292px;
+    margin-top: 56px;
+}
+
+.acc-zl-content .middle .div1 {
+    margin-left: 160px;
+    float: left;
+}
+
+.acc-zl-content .middle .div2 {
+    float: right;
+}
+
+.acc-zl-content .middle .div2 .p1 {
+    color: #292c2f;
+    font-size: 21px;
+    margin-right: 380px;
+    margin-top: 20px;
+    padding-left: 14.8px;
+    border-left: 3px solid #0058ff;
+}
+
+.acc-zl-content .middle .div2 .p2 {
+    margin-top: 31.7px;
+}
+
+.acc-zl-content .middle .div2 .p3 {
+    margin-top: 140px;
+}
+
+.acc-zl-content .middle .div2 .p3 .btn1,
+.acc-zl-content .middle .div2 .p3 .btn2,
+.acc-zl-content .middle .div2 .p3 .btn3 {
+    width: 106px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #e6e6e6;
+    font-size: 15.9px;
+    color: #262626;
+}
+
+.acc-zl-content .middle .div2 .p3 .btn1.active,
+.acc-zl-content .middle .div2 .p3 .btn2.active,
+.acc-zl-content .middle .div2 .p3 .btn3.active {
+    background-color: #0058ff !important;
+    color: #ffffff;
+}
+
+.acc-zl-content .middle .div2 .p3 .btn2 {
+    margin-left: 30px;
+    background-color: #373b3e !important;
+    color: #ffffff;
+}
+
+.acc-zl-content .middle .div2 .p3 .btn3 {
+    margin-left: 30px;
+}
+
+.acc-zl-content .dvp {
+    margin-left: 160px;
+    height: 31.2px;
+    margin-top: 19.7px;
+}
+
+.acc-zl-content .dvp .btn {
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    width: 104px;
+    height: 31.2px;
+    color: #ffffff;
+    font-size: 12.5px;
+    background-color: #373b3e;
+    margin-right: 26px;
+}
+
+.acc-zl-content .ov {
+    margin-top: 60px;
+    padding-bottom: 78.7px;
+    text-align: center;
+}
+
+.acc-zl-content .ov i {
+    padding: 0px 8px;
+    background-color: #90a0ba;
+    border-radius: 20px;
+    margin-right: 38px;
+}
+
+.acc-zl-content .ov i.active {
+    background-color: #0058ff;
+}
+
+.acc-wt-content {
+    height: 400px;
+    text-align: center;
+}
+
+.acc-wt-content .dv {
+    margin-top: 17.6px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #6d6d6d;
+
+}
+
+.acc-rs-content {
+    height: 550px;
+}
+
+.acc-rs-content .title {
+    height: 68px;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.acc-rs-content .dv1 {
+    color: #292c2f;
+    font-size: 21px;
+    padding-left: 14.8px;
+    margin-left: 26.5px;
+    border-left: 3px solid #0058ff;
+}
+
+.acc-rs-content .dv1 .btn {
+    float: right;
+    width: 110px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+}
+
+.acc-rs-content .dv1 .btn:disabled{
+    background: #e6e6e6 !important;
+}
+
+.acc-rs-content .sz {
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 54px;
+}
+
+.acc-rs-content .sz .td2{
+    width: 160px;
+}
+
+.acc-rs-content .sz .s-btn{
+    position: relative;
+    top: 8px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.acc-rs-content .sz .s-btn img{
+    background: #e6e6e6;
+    width: 34px;
+    border-radius: 4px;
+}
+
+.acc-rs-content .layui-form-item {
+    margin-bottom: 20px;
+}
+
+.acc-rs-content .my-lable {
+    margin-left: 10px;
+}
+
+.acc-rs-content .layui-input-block {
+    margin-top: 14px;
+}
+
+.acc-rs-content .dv-h{
+    font-size: 18px;
+    color: #878787;
+    margin-left: 46px;
+    margin-top: 22px;
+}
+
+/* 账户身份资料上传 end */
+
+/* 打印客户基本信息页面 start */
+
+.cus-info .title {
+    color: #292c2f;
+    font-size: 21px;
+    height: 68px;
+    line-height: 68px;
+    text-align: center;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.acc-cus-content {
+    width: 760px;
+    margin: 0 auto;
+    margin-top: 53.5px;
+}
+
+.acc-cus-content .my-lable {
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+.cus-info .con2 {
+    padding-left: 166px;
+}
+
+.cus-info .con2 table {
+    line-height: 55px;
+
+}
+
+.cus-info .con2 table td {
+    font-size: 21px;
+    margin-right: 42.5px;
+}
+
+.cus-info .con2 .ck {
+    padding-left: 42.5px;
+}
+
+.cus-info .con3 .btn-print {
+    width: 450px;
+    height: 45px;
+    background-color: #373b3e;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.cus-info .con3 .d1 {
+    padding-left: 166px;
+    margin-bottom: 20px;
+}
+
+.cus-info .con3 .d2 {
+    padding-left: 166px;
+    margin-bottom: 79px;
+    font-weight: bold;
+}
+
+.cus-info .con3 .d2 .sp {
+    padding: 0px 80px;
+    border-bottom: 2px solid;
+}
+
+.cus-info .con3 .d2 .p2 {
+    float: right;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.cus-info .con3 p {
+    line-height: 55px;
+    font-size: 21px;
+}
+
+/*打印客户基本信息页面 end*/
+
+/* 填写客户基本信息页面 start */
+
+.acc-cusm-content .title {
+    height: 68px;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.acc-cusm-content .dv1 {
+    color: #292c2f;
+    font-size: 21px;
+    padding-left: 14.8px;
+    margin-left: 26.5px;
+    border-left: 3px solid #0058ff;
+}
+
+.acc-cusm-content .sz {
+    width: 760px;
+    margin: 0 auto;
+    margin-top: 54px;
+}
+
+
+.acc-cusm-content .layui-form-item {
+    margin-bottom: 20px;
+}
+
+.acc-cusm-content .my-lable {
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+.acc-cusm-content .layui-input-block {
+    margin-top: 14px;
+}
+
+.acc-cusm-content .content {
+    margin-top: 40.3px;
+    margin-left: 157px;
+}
+
+.acc-cusm-content .content .yuan {
+    padding: 5px;
+    background-color: #0058ff;
+    border-radius: 10px;
+}
+
+.acc-cusm-content .content .mtitle {
+    color: #000;
+}
+
+/* 填写客户基本信息页面 end */
+
+/* 贷款基础信息页面 start */
+/* 填写客户基本信息页面 start */
+
+.acc-loanInfo-content .title {
+    height: 68px;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.acc-loanInfo-content .dv1 {
+    color: #292c2f;
+    font-size: 21px;
+    padding-left: 14.8px;
+    margin-left: 26.5px;
+    border-left: 3px solid #0058ff;
+}
+
+.acc-loanInfo-content .sz {
+    width: 760px;
+    margin-left: 157px;
+    margin-top: 54px;
+}
+.acc-loanInfo-content .sz .pmar{
+    margin-bottom: 20px;
+}
+
+.acc-loanInfo-content .layui-form-item {
+    margin-bottom: 20px;
+}
+
+.acc-loanInfo-content .my-lable {
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+.acc-loanInfo-content .layui-input-block {
+    margin-top: 14px;
+}
+
+.acc-loanInfo-content .content {
+    margin-top: 40.3px;
+    margin-left: 157px;
+}
+
+.acc-loanInfo-content .content .s-item{
+    width: 30%;
+    float: left;
+    margin-right: 30px;
+}
+
+.acc-loanInfo-content .content .s-item p{
+    margin-top: 20px;
+}
+
+.acc-loanInfo-content .content .yuan {
+    padding: 5px;
+    background-color: #0058ff;
+    border-radius: 10px;
+}
+
+.acc-loanInfo-content .content .mtitle {
+    color: #000;
+}
+
+/* 填写客户基本信息页面 end */
+
+/* 贷款基础信息页面 end */
+
+
+
+
+/* 销售人员选择页面 start */
+.sman {
+
+}
+
+.sman .dv1 {
+    margin-top: 32px;
+    margin-left: 40px;
+}
+
+.sman .dv1 .layui-form-label {
+    padding: 6px 15px;
+}
+
+.sman .dv1 .layui-form-mid {
+    padding: 6px 0px;
+}
+
+.sman .dv2 {
+    width: 144px;
+    height: 30px;
+}
+
+.sman .dv2 input[type=text] {
+    width: 144px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.sman .dv1 .btn {
+    line-height: 0;
+    width: 65px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.sman .m-table .left {
+    float: left;
+    margin-left: 55px;
+}
+
+.sman .m-table .right {
+    float: right;
+    margin-right: 55px;
+}
+
+.sman .m-table table {
+    width: 272px;
+}
+
+.sman .m-table table td {
+    border-left: none;
+    border-right: none;
+}
+
+/* 销售人员选择页面 end */
+
+/* 销售人员新增页面 start*/
+
+.smanform {
+    margin: 0 auto;
+    width: 450px;
+}
+
+.smanform .my-lable {
+    margin-bottom: 13.3px;
+    margin-left: 11.5px;
+}
+
+/* 销售人员新增页面 end*/
+
+/* table 样式  start */
+
+.mtable {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.mtable thead {
+    background-color: #f2f6f9;
+}
+.mtable tr th,
+.mtable tr td {
+    font-size: 14px;
+    height: 45px;
+    text-align: center;
+
+}
+
+/* table 样式  end */
+.my-yuan{
+    position: relative;
+    top: -3px;
+}
+
+/*  CR  end  */

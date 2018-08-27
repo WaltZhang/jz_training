@@ -13,11 +13,9 @@ class CreateCustomerView(CreateView):
         return reverse('customer:identity') + '?phone=' + self.phone
 
     def form_valid(self, form):
-        self.phone = self.request.GET['phone_number']
+        self.phone = self.request.POST['phone_number']
         return super().form_valid(form)
 
-    def form_invalid(self, form):
-        return super().form_invalid(form)
 
 class IdentityView(TemplateView):
     template_name = 'customer/identity.html'

@@ -4,7 +4,8 @@
 
 {% block body %}
 <div class="acc-apl-content">
-    <form method="get" id="register_form" style="margin-bottom: 0px;padding-bottom: 74px">
+    <form method="post" id="register_form" style="margin-bottom: 0px;padding-bottom: 74px">
+        {% csrf_token %}
         {{ form.as_p }}
     </form>
 </div>

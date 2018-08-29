@@ -53,15 +53,17 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="card border-0 mb-3 mt-3">
+                    {% block title_bar %}
                     <div class="card-body bg-white fs-4 acc-apl">
                         <div class="my-title">
                             <span class="active">{% trans '客户注册' %}&nbsp;&nbsp;</span>
                             <span class="line"></span>
-                            <span class="{% block id_active %}{% endblock %}">&nbsp;&nbsp;{% trans '身份登记' %}&nbsp;</span>
+                            <span>&nbsp;&nbsp;{% trans '身份登记' %}&nbsp;</span>
                             <span class="line"></span>
-                            <span class="{% block upload_active %}{% endblock %}">&nbsp;&nbsp;{% trans '资料上传' %}</span>
+                            <span>&nbsp;&nbsp;{% trans '资料上传' %}</span>
                         </div>
                     </div>
+                    {% endblock %}
                     {% block body %}
                     {% endblock %}
                 </div>

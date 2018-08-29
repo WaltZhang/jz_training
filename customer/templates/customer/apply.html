@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title_bar %}
+<div class="card-body bg-white fs-4 acc-apl">
+    <div class="my-title">
+        <span>{% trans '贷款申请基础信息' %}</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+    <form method="post" id="apply_form" style="margin-bottom: 0px;padding-bottom: 74px">
+        {% csrf_token %}
+        {% for field in form %}
+        {% if forloop.counter == 1 %}
+        <div class="acc-loanInfo-content">
+            <div class="title">
+                <div style="height: 20px"></div>
+                <div class="dv1">贷款申请信息
+                    <span style="float: right; position: relative; right: 20px;" class="fn-size-16 fn-color-1 mcursor">
+                        编辑&nbsp;
+                        <img width="12" src="{% static '/images/up_arrow.png' %}">
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% elif forloop.counter == 4 %}
+        <div class="acc-loanInfo-content">
+            <div class="title">
+                <div style="height: 20px"></div>
+                <div class="dv1">身份信息
+                    <span style="float: right; position: relative; right: 20px;" class="fn-size-16 fn-color-1 mcursor">
+                        编辑&nbsp;
+                        <img width="12" src="{% static '/images/up_arrow.png' %}">
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% elif forloop.counter == 15 %}
+        <div class="acc-loanInfo-content">
+            <div class="title">
+                <div style="height: 20px"></div>
+                <div class="dv1">工作信息
+                    <span style="float: right; position: relative; right: 20px;" class="fn-size-16 fn-color-1 mcursor">
+                        编辑&nbsp;
+                        <img width="12" src="{% static '/images/up_arrow.png' %}">
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="acc-apl-content">
+            {% if forloop.counter != 2 %}
+                <img src="{% static '/images/dot.png' %}" class="my_yuan">
+            {% endif %}
+            {% if forloop.counter <= 3 %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if forloop.counter == 2 %}
+                <label>{% trans '说明：购置家具家电、住房装修、旅游、教育、其他' %}</label><br/><br/>
+                {% endif %}
+            {% elif forloop.counter > 3 and forloop.counter != 11 and forloop.counter != 14 and forloop.counter != 16 %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                <div class="row">
+                    {% for choice in field.field.choices %}
+                        <div class="col-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{ field.name }}" id="id_{{ field.name }}_{{ forloop.counter0 }}" value="{{ choice.0 }}">
+                                <label class="form-check-label" for="id_{{ field.name }}_{{ forloop.counter0 }}">{{ choice.1 }}</label>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </form>
+{% endblock %}
+
+{% block action_bar %}
+<button class="btn btn-primary fn-color-white fn-size-18" onclick="$('#apply_form').submit()">{% trans '提交' %}</button>
+{% endblock %}

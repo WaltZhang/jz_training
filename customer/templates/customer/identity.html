@@ -1,11 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h2>identity</h2>
-Phone number:&nbsp;{{ phone }}
-</body>
-</html>
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title_bar %}
+<div class="card-body bg-white fs-4 acc-apl">
+    <div class="my-title">
+        <span class="active">{% trans '客户注册' %}&nbsp;&nbsp;</span>
+        <span class="line"></span>
+        <span class="active">&nbsp;&nbsp;{% trans '身份登记' %}&nbsp;</span>
+        <span class="line"></span>
+        <span>&nbsp;&nbsp;{% trans '资料上传' %}</span>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block body %}
+<div class="acc-apl-content">
+    <form method="post" id="id_form" style="margin-bottom: 0px;padding-bottom: 74px">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="name">{% trans '姓名' %}</label>
+                    <input type="text" name="name" id="name" class="form-control" value="{{ name }}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="gender">{% trans '性别' %}</label>
+                    <input type="text" name="gender" id="gender" class="form-control" value="{{ gender }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="identity">{% trans '身份证号码' %}</label>
+                    <input type="text" name="identity" id="identity" class="form-control" value="{{ identity }}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="birthday">{% trans '出生日期' %}</label>
+                    <input type="text" name="birthday" id="birthday" class="form-control" value="{{ birthday }}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="authorization_office">{% trans '签发机关' %}</label>
+                    <input type="text" name="authorization_office" id="authorization_office" class="form-control" value="{{ authorization_office }}">
+                </div>
+                <div class="form-group">
+                    <label for="address">{% trans '地址' %}</label>
+                    <input type="text" name="address" id="address" class="form-control" value="{{ address }}">
+                </div>
+                <div class="form-group">
+                    <label for="validity_period">{% trans '有效期限' %}</label>
+                    <input type="text" name="validity_period" id="validity_period" class="form-control" value="{{ validity_period }}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="id_card_url">{% trans '身份证图片' %}</label>
+                    <img src="{{ id_card_url }}">
+                    <input type="hidden" name="id_card_url" id="id_card_url" value="{{ id_card_url }}">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block action_bar %}
+<button class="btn btn-primary fn-color-white fn-size-18" onclick="$('#id_form').submit()">{% trans '注册提交' %}</button>
+{% endblock %}

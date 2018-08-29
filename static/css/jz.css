@@ -223,9 +223,9 @@ input[type="button"]:disabled {
 }
 
 .acc-apl-content {
-    width: 450px;
+    width: 700px;
     margin: 0 auto;
-    margin-top: 54px;
+    margin-top: 4px;
 }
 
 .acc-apl-content .my-lable {
@@ -629,6 +629,7 @@ input[type="button"]:disabled {
 .acc-loanInfo-content .title {
     height: 68px;
     border-bottom: 1px dashed #e6e6e6;
+    margin-bottom: 40px;
 }
 
 .acc-loanInfo-content .dv1 {
@@ -781,6 +782,11 @@ input[type="button"]:disabled {
     height: 45px;
     text-align: center;
 
+}
+
+ul {
+  display: flex;
+  list-style: none;
 }
 
 /* table 样式  end */

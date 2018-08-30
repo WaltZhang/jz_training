@@ -23,3 +23,35 @@ class Loan(models.Model):
     amount = models.IntegerField()
     identity = models.CharField(max_length=18)
     education = models.IntegerField()
+    marriage = models.IntegerField()
+    members = models.IntegerField()
+    incoming = models.IntegerField()
+    property = models.IntegerField()
+    vehicle = models.IntegerField()
+    residence = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.identity
+
+
+class Province(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+
+class City(models.Model):
+    name = models.CharField(max_length=20)
+    province = models.ForeignKey('customer.Province', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class District(models.Model):
+    name = models.CharField(max_length=20)
+    city = models.ForeignKey('customer.City', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

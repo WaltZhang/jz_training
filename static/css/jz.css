@@ -223,7 +223,7 @@ input[type="button"]:disabled {
 }
 
 .acc-apl-content {
-    width: 700px;
+    width: 950px;
     margin: 0 auto;
     margin-top: 4px;
 }
@@ -782,11 +782,6 @@ input[type="button"]:disabled {
     height: 45px;
     text-align: center;
 
-}
-
-ul {
-  display: flex;
-  list-style: none;
 }
 
 /* table 样式  end */

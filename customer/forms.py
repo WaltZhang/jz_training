@@ -6,8 +6,8 @@ from .models import IdentityRegistry, Loan
 HOUSING_LOAN = 'housing_loan'
 WARRANTY_LOAN = 'warranty_loan'
 PRODUCT_TYPES = [
-    (WARRANTY_LOAN, ugettext('保单贷')),
     (HOUSING_LOAN, ugettext('房供贷')),
+    (WARRANTY_LOAN, ugettext('保单贷')),
 ]
 
 class CustomerForm(forms.Form):
@@ -82,12 +82,14 @@ class CreateIdentityForm(forms.ModelForm):
 
 
 LOAN_USES = [
-    ('personal_consumption', ugettext('个人消费')),
+    ('1', ugettext('经营用途')),
+    ('2', ugettext('个人消费')),
+    ('3', ugettext('农牧业用途')),
 ]
 LOAN_AMOUNTS = [
-    ('l1', ugettext('20-30万')),
-    ('l2', ugettext('30-50万')),
-    ('l3', ugettext('50万以上')),
+    ('1', ugettext('10万以下')),
+    ('2', ugettext('10-20万')),
+    ('3', ugettext('20-30万')),
 ]
 EDUCATION_LEVEL = [
     ('1', ugettext('小学以下')),
@@ -97,6 +99,41 @@ EDUCATION_LEVEL = [
     ('5', ugettext('本科')),
     ('6', ugettext('研究生及以上')),
 ]
+MARRIAGE_STATE = [
+    ('1', ugettext('未婚')),
+    ('2', ugettext('已婚')),
+    ('3', ugettext('其他')),
+]
+MEMBER_OF_FAMILY = [
+    ('1', ugettext('一人及以下')),
+    ('2', ugettext('二人')),
+    ('3', ugettext('三人')),
+    ('4', ugettext('四人及以上')),
+]
+INCOMING_LEVEL = [
+    ('1', ugettext('2000及以下')),
+    ('2', ugettext('2001 - 5000')),
+    ('3', ugettext('5001 - 10000')),
+    ('4', ugettext('10001 - 20000')),
+    ('5', ugettext('20001 - 50000')),
+    ('6', ugettext('50001及以上')),
+]
+PROPERTIES = [
+    ('1', ugettext('与父母同住')),
+    ('2', ugettext('租用房屋')),
+    ('3', ugettext('本人房产（无按揭）')),
+    ('4', ugettext('本人房产（有按揭）')),
+    ('5', ugettext('集体宿舍（无房租）')),
+    ('6', ugettext('朋友、亲戚家及其他')),
+]
+VEHICLES = [
+    ('1', ugettext('步行、自行车')),
+    ('2', ugettext('摩托、电瓶车')),
+    ('3', ugettext('公共交通')),
+    ('4', ugettext('自驾汽车')),
+    ('5', ugettext('其他')),
+]
+
 
 class CreateApplyForm(forms.ModelForm):
     use = forms.ChoiceField(label=ugettext('贷款用途及贷款用途子类'), choices=LOAN_USES, widget=forms.Select(attrs={
@@ -109,15 +146,16 @@ class CreateApplyForm(forms.ModelForm):
     amount = forms.ChoiceField(label=ugettext('申请金额'), choices=LOAN_AMOUNTS, widget=forms.Select(attrs={
         'class': 'form-control',
     }))
-    education = forms.ChoiceField(label=ugettext('教育程度'), choices=EDUCATION_LEVEL, widget=forms.RadioSelect(attrs={
-        'class': 'col-3',
-    }))
+    education = forms.ChoiceField(label=ugettext('教育程度'), choices=EDUCATION_LEVEL, widget=forms.RadioSelect())
+    marriage = forms.ChoiceField(label=ugettext('婚姻状况'), choices=MARRIAGE_STATE, widget=forms.RadioSelect())
+    members = forms.ChoiceField(label=ugettext('家庭人口'), choices=MEMBER_OF_FAMILY, widget=forms.RadioSelect())
+    incoming = forms.ChoiceField(label=ugettext('收入水平（全年收入月平均）'), choices=INCOMING_LEVEL, widget=forms.RadioSelect())
+    property = forms.ChoiceField(label=ugettext('居住类型'), choices=PROPERTIES, widget=forms.RadioSelect())
+    vehicle = forms.ChoiceField(label=ugettext('主要出行交通工具'), choices=VEHICLES, widget=forms.RadioSelect())
+    residence = forms.CharField(label=ugettext('住宅地址'), widget=forms.HiddenInput())
 
     class Meta:
         model = Loan
         fields = [
-            'use',
-            'description',
-            'amount',
-            # 'education',
+
         ]

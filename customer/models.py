@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import ugettext
 
 
 class IdentityRegistry(models.Model):
@@ -32,26 +31,3 @@ class Loan(models.Model):
 
     def __str__(self):
         return self.identity
-
-
-class Province(models.Model):
-    name = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.name
-
-
-class City(models.Model):
-    name = models.CharField(max_length=20)
-    province = models.ForeignKey('customer.Province', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
-class District(models.Model):
-    name = models.CharField(max_length=20)
-    city = models.ForeignKey('customer.City', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name

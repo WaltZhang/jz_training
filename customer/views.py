@@ -1,4 +1,3 @@
-from django.views.generic.base import TemplateView
 from django.views.generic import FormView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy, reverse

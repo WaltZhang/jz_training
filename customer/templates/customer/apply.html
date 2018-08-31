@@ -12,8 +12,8 @@
 
 {% block body %}
     <form method="post" id="apply_form" style="margin-bottom: 0px;padding-bottom: 74px">
-        {% csrf_token %}
-        {% for field in form %}
+    {% csrf_token %}
+    {% for field in form %}
         {% if forloop.counter == 1 %}
         <div class="acc-loanInfo-content">
             <div class="title">
@@ -51,7 +51,10 @@
             </div>
         </div>
         {% endif %}
-        <div class="acc-apl-content" style="display: block;">
+        {% if forloop.counter == 1 or forloop.counter == 4 or forloop.counter == 15 %}
+        <div class="section" style="display: block;">
+        {% endif %}
+        <div class="acc-apl-content">
             {% if forloop.counter != 2 %}
                 <img src="{% static '/images/dot.png' %}" class="my_yuan">
             {% endif %}
@@ -92,7 +95,10 @@
             </div>
             {% endif %}
         </div>
-        {% endfor %}
+        {% if forloop.counter == 3 or forloop.counter == 14 or forloop.counter == 15 %}
+        </div>
+        {% endif %}
+    {% endfor %}
     </form>
 {% endblock %}
 
@@ -112,8 +118,6 @@ $(function () {
             $(this).find('img').attr('src', '{% static "/images/up_arrow.png" %}');
         }
         $(this).parent().parent().parent().next().toggle();
-        $(this).parent().parent().parent().next().next().toggle();
-        $(this).parent().parent().parent().next().next().next().toggle();
     });
     $.each(provinces, function(idx, item) {
         $('#province').append($('<option>', {

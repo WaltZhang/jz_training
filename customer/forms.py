@@ -133,6 +133,14 @@ VEHICLES = [
     ('4', ugettext('自驾汽车')),
     ('5', ugettext('其他')),
 ]
+EMPLOYMENTS = [
+    ('1', ugettext('国有企业')),
+    ('2', ugettext('政府或非营利机构')),
+    ('3', ugettext('私营、外企')),
+    ('4', ugettext('小企业主或个体经营者')),
+    ('5', ugettext('农民')),
+    ('6', ugettext('无固定工作、自由职业')),
+]
 
 
 class CreateApplyForm(forms.ModelForm):
@@ -153,9 +161,13 @@ class CreateApplyForm(forms.ModelForm):
     property = forms.ChoiceField(label=ugettext('居住类型'), choices=PROPERTIES, widget=forms.RadioSelect())
     vehicle = forms.ChoiceField(label=ugettext('主要出行交通工具'), choices=VEHICLES, widget=forms.RadioSelect())
     residence = forms.CharField(label=ugettext('住宅地址'), widget=forms.HiddenInput())
+    employment = forms.ChoiceField(label=ugettext('受雇类型'), choices=EMPLOYMENTS, widget=forms.RadioSelect())
+    company = forms.CharField(label=ugettext('公司名称'), required=False, widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'style': 'display:none',
+    }))
 
     class Meta:
         model = Loan
         fields = [
-
         ]

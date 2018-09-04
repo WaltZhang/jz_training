@@ -28,6 +28,8 @@ class Loan(models.Model):
     property = models.IntegerField()
     vehicle = models.IntegerField()
     residence = models.CharField(max_length=200)
+    empployment = models.CharField(max_length=20)
+    company = models.CharField(max_length=100)
 
     def __str__(self):
         return self.identity

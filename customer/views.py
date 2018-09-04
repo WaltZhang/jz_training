@@ -17,7 +17,6 @@ class CreateCustomerView(FormView):
         self.phone_number = self.request.POST['phone_number']
         return super().form_valid(form)
 
-
 class IdentityView(CreateView):
     form_class = CreateIdentityForm
     template_name = 'customer/identity.html'

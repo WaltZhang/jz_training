@@ -75,5 +75,12 @@
 {% endblock %}
 
 {% block action_bar %}
+<button class="btn btn-primary fn-color-white fn-size-18" id="scan">{% trans '扫描身份证' %}</button>
 <button class="btn btn-primary fn-color-white fn-size-18" onclick="$('#id_form').submit()">{% trans '注册提交' %}</button>
 {% endblock %}
+
+<script type="application/javascript">
+$(function () {
+    $('#scan')
+}
+</script>

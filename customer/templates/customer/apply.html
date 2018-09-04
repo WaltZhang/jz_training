@@ -80,19 +80,28 @@
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
             <div class="row">
                 <div class="col-2">
-                    <select id="provice" class="form-control"></select>
+                    <select id="province" class="form-control">
+                        <option value="000000">{% trans '选择省' %}</option>
+                    </select>
                 </div>
                 <div class="col-2">
-                    <select id="city" class="form-control"></select>
+                    <select id="city" class="form-control">
+                        <option value="000000">{% trans '选择市' %}</option>
+                    </select>
                 </div>
                 <div class="col-3">
-                    <select id="district" class="form-control"></select>
+                    <select id="district" class="form-control" onchange="buildResidence()">
+                        <option value="000000">{% trans '选择区' %}</option>
+                    </select>
                 </div>
                 <div class="col-5">
-                    <input type="text" id="residence" class="form-control" placeholder="{% trans '填写具体街道和门牌号' %}">
+                    <input type="text" id="residence" class="form-control" placeholder="{% trans '填写具体街道和门牌号' %}" onchange="buildResidence()">
                 </div>
                 {{ field }}
+                <br/>
             </div>
+            {% elif forloop.counter == 12 %}
+            {{ field }}
             {% endif %}
         </div>
         {% if forloop.counter == 3 or forloop.counter == 14 or forloop.counter == 15 %}
@@ -119,12 +128,67 @@ $(function () {
         }
         $(this).parent().parent().parent().next().toggle();
     });
-    $.each(provinces, function(idx, item) {
-        $('#province').append($('<option>', {
-            value: item.value,
-            text: item.text
-        }));
+    $('#city').change(function() {
+        $("#district option").each(function() {
+            if ($(this).val() != '000000')
+                $(this).remove();
+        });
+        $.get(
+            '{% url "locations:provinces" %}' + $('#province').val() + '/' + $('#city').val(),
+            function(data, status, xhr) {
+                $.each(data, function(_, val) {
+                    $('#district').append($('<option>', {
+                        value: val['code'],
+                        text: val['name']
+                    }));
+                });
+            }
+        );
+    });
+    $('#province').change(function() {
+        $("#city option").each(function() {
+            if ($(this).val() != '000000')
+                $(this).remove();
+        });
+        $.get(
+            '{% url "locations:provinces" %}' + $('#province').val(),
+            function(data, status, xhr) {
+                $.each(data, function(_, val) {
+                    $('#city').append($('<option>', {
+                        value: val['code'],
+                        text: val['name']
+                    }));
+                });
+            }
+        );
+    });
+    $.get(
+        '{% url "locations:provinces" %}',
+        function(data, status, xhr) {
+            $.each(data, function(_, val) {
+                $('#province').append($('<option>', {
+                    value: val['code'],
+                    text: val['name']
+                }));
+            });
+        }
+    );
+    $('input[name="employment"]').change(function() {
+        if ($(this).val() > 4) {
+            $('input[name="company"]').css('display', 'none');
+        } else {
+            $('input[name="company"]').css('display', 'block');
+        }
     });
 });
+
+function buildResidence() {
+    if ($('#province').val() != '000000' &&
+        $('#city').val() != '000000' &&
+        $('#district').val() != '000000' &&
+        $.trim($('#residence').val()) != '') {
+        $('#id_residence').val($('#province option:selected').text() + $('#city option:selected').text() + $('#district option:selected').text() + $.trim($('#residence').val()));
+    }
+};
 </script>
 {% endblock %}
